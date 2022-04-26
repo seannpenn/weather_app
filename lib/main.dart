@@ -71,7 +71,7 @@ class _WeatherHomePageState extends State<WeatherHomePage> {
                           controller: _searchInput,
                           validator: (value){
                             if (value == null || value.isEmpty) {
-                                return 'Please enter your username';
+                                return 'City name invalid';
                               }
                               return null;
                           },
