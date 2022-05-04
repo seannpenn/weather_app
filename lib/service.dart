@@ -1,31 +1,21 @@
 import 'dart:convert';
-import 'package:weather/weather.dart';
+// import 'package:weather/weather.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:weather/weather.dart';
+import 'package:weather_app/widgets/model.dart';
 
 class DataService {
+  WeatherFactory wf = WeatherFactory('2a69e303f550d4dafeff5ecc1e534042');
+
   Future<Weather> getWeather(String city) async {
-    // api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+    Weather data = await wf.currentWeatherByCityName(city);
+    print(data);
+    return data;
+  }
 
-    // final queryParameters = {
-    //   'q': city,
-    //   'appid': '944c45c731b2223fa6dfc656b823ce9b',
-    //   'units': 'imperial'
-    // };
-
-    // final uri = Uri.https(
-    //     'api.openweathermap.org', '/data/2.5/weather', queryParameters);
-
-    // final response = await http.get(uri);
-
-    WeatherFactory wf = WeatherFactory('944c45c731b2223fa6dfc656b823ce9b');
-
-    // final response = 
-    Weather json = await wf.currentWeatherByCityName(city);
-
-    // print(response.body);
-    // final json = jsonDecode(response.body);
-    // return WeatherResponse.fromJson(json);
-    return json;
+  Future<List<Weather>> getWeekWeather(String city) async {
+      List<Weather> forecast = await wf.fiveDayForecastByCityName(city);
+    return forecast;
   }
 }
