@@ -41,6 +41,8 @@ dependencies:
   hive: ^2.1.0
   hive_flutter: ^1.1.0
   flutter_glow: ^0.2.0
+  intl: ^0.17.0
+  cached_network_image: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +72,15 @@ flutter:
     - assets/images/white.jpg
     - assets/images/worldMap.jpg
     - assets/images/globe.png
+    - assets/images/icons/01d@2x.png
+    - assets/images/icons/02d@2x.png
+    - assets/images/icons/03d@2x.png
+    - assets/images/icons/04d@2x.png
+    - assets/images/icons/09d@2x.png
+    - assets/images/icons/10d@2x.png
+    - assets/images/icons/11d@2x.png
+    - assets/images/icons/13d@2x.png
+
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
